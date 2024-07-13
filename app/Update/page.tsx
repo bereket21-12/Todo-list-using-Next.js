@@ -1,8 +1,9 @@
+import UpdateTask from '@/components/UpdateTask'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Uncompleted page</div>
+    <UpdateTask/>
   )
 }
 
