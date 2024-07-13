@@ -6,7 +6,9 @@ import user from "@/models/user";
 const handler = NextAuth({
   providers: [
     GoogleProvider({
+      //@ts-ignore
       clientId: process.env.GOOGLE_ID,
+      //@ts-ignore
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
@@ -40,10 +42,12 @@ const handler = NextAuth({
         await connectTODB();
 
         const usersession = await user.findOne({
+              //@ts-ignore
           email:session.user.email,
         });
 
         if (usersession) {
+              //@ts-ignore
           session.user.id = usersession._id.toString();
         }
 

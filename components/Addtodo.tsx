@@ -17,6 +17,7 @@ const Addtodo = () => {
     if (session?.user?.id) {
       setPost((prevPost) => ({
         ...prevPost,
+            //@ts-ignore
         userId: session.user.id,
       }));
     }
