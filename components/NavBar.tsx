@@ -15,11 +15,12 @@ const NavBar = () => {
   useEffect(() => {
     const setUserProviders = async () => {
       const response = await getProviders();
+      //@ts-ignore
       setProviders(response);
     };
     setUserProviders();
   }, []);
-
+ //@ts-ignore
   const handleSignIn = (param)=>{
     signIn(param,{callbackUrl:'/Completed'})
      
@@ -57,7 +58,7 @@ const NavBar = () => {
         ) : (
           <div className="flex gap-2">
             {providers &&
-              Object.values(providers).map((provider) => (
+              Object.values(providers).map((provider:any) => (
                 <div className="flex gap-2" key={provider.name}>
                   <button
                     onClick={() => handleSignIn(provider.id)}

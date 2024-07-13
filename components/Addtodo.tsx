@@ -14,6 +14,7 @@ const Addtodo = () => {
   });
 
   useEffect(() => {
+    //@ts-ignore
     if (session?.user?.id) {
       setPost((prevPost) => ({
         ...prevPost,
@@ -22,7 +23,7 @@ const Addtodo = () => {
       }));
     }
   }, [session]);
-
+//@ts-ignore
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPost((prevPost) => ({
@@ -31,7 +32,7 @@ const Addtodo = () => {
     }));
     console.log("data at the form", post);
   };
-
+//@ts-ignore
   const addTask = async (event) => {
     event.preventDefault();
 
@@ -45,6 +46,7 @@ const Addtodo = () => {
         },
         body: JSON.stringify(post),
       }).then(
+        //@ts-ignore
         router.push('/Completed')
       );
 

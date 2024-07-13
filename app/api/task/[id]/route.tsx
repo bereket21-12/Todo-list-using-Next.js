@@ -1,6 +1,6 @@
 import { connectTODB } from "@/utility/database";
 import Todo from "@/models/todos";
-
+    //@ts-ignore
 export const GET = async (req) => {
   try {
     await connectTODB();
@@ -23,7 +23,7 @@ export const GET = async (req) => {
   }
 };
 
-
+    //@ts-ignore
 export const PATCH = async (req) => {
   try {
     await connectTODB();

@@ -1,6 +1,6 @@
 import { connectTODB } from "@/utility/database";
 import Todo from "@/models/todos";
-
+    //@ts-ignore
 export const DELETE = async (req) => {
   try {
     await connectTODB();

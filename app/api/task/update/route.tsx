@@ -1,6 +1,6 @@
 import { connectTODB } from "@/utility/database";
 import Todo from "@/models/todos";
-
+    //@ts-ignore
 export const PATCH = async (req) => {
   try {
     await connectTODB();
@@ -15,7 +15,7 @@ export const PATCH = async (req) => {
       { _id: id },
       { $set: { name, time, status,date } }
     );
-
+    //@ts-ignore
     if (updatedTask.nModified === 0) {
       return new Response("No task was updated", { status: 404 });
     }

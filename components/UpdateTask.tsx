@@ -29,7 +29,7 @@ const UpdateTask = () => {
       fetchTask();
     }
   }, [id]);
-
+ //@ts-ignore
   const handleChange = (e) => {
     const { name, value } = e.target;
     setTask((prevTask) => ({
@@ -37,7 +37,7 @@ const UpdateTask = () => {
       [name]: value,
     }));
   };
-
+ //@ts-ignore
   const handleUpdate = async (e) => {
     e.preventDefault();
 

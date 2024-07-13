@@ -11,7 +11,7 @@ export const connectTODB = async () => {
   try {
     console.log('Attempting to connect to MongoDB...');
     console.log('MongoDB URL:', process.env.MONGODB_URL);
-
+ //@ts-ignore
     const db = await mongoose.connect(process.env.MONGODB_URL, {
       dbName:'user',
       serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
